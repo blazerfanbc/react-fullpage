@@ -91,9 +91,9 @@ var SectionsContainer = function (_React$Component) {
                 this._addActiveClass();
             }
 
-            // if (this.props.allowScrolling & !this.props.scrollBar) {
-            //     this._addCSS3Scroll();
-            // }
+            if (this.props.allowScrolling & !this.props.scrollBar) {
+                this._addCSS3Scroll();
+            }
         }
     }, {
         key: '_removeDefaultEventListeners',
@@ -108,7 +108,7 @@ var SectionsContainer = function (_React$Component) {
     }, {
         key: '_addCSS3Scroll',
         value: function _addCSS3Scroll() {
-            this._addOverflowToBody();
+            // this._addOverflowToBody();
             this._addMouseWheelEventHandlers();
         }
     }, {
