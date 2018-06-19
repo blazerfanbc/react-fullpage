@@ -66,31 +66,6 @@ var SectionsContainer = function (_React$Component) {
             this._handleResize();
             window.addEventListener('resize', this._handleResize);
 
-            // if (this.props.allowScrolling & !this.props.scrollBar) {
-            //     this._addCSS3Scroll();
-            //     this._handleAnchor(); //Go to anchor in case we found it in the URL
-
-            //     window.addEventListener('hashchange', this._handleAnchor, false); //Add an event to watch the url hash changes
-
-            //     if (this.props.arrowNavigation) {
-            //         window.addEventListener('keydown', this._handleArrowKeys);
-            //     }
-
-            //     if (this.props.touchNavigation) {
-            //         this._handleTouchNav();
-            //     }
-            // }
-        }
-    }, {
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(nextProps) {
-            if (this.props.activeSection !== nextProps.activeSection) {
-                this.setState({ activeSection: nextProps.activeSection });
-                this._setAnchor(nextProps.activeSection);
-                this._handleSectionTransition(nextProps.activeSection);
-                this._addActiveClass();
-            }
-
             if (this.props.allowScrolling & !this.props.scrollBar) {
                 this._addCSS3Scroll();
                 this._handleAnchor(); //Go to anchor in case we found it in the URL
@@ -104,6 +79,16 @@ var SectionsContainer = function (_React$Component) {
                 if (this.props.touchNavigation) {
                     this._handleTouchNav();
                 }
+            }
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            if (this.props.activeSection !== nextProps.activeSection) {
+                this.setState({ activeSection: nextProps.activeSection });
+                this._setAnchor(nextProps.activeSection);
+                this._handleSectionTransition(nextProps.activeSection);
+                this._addActiveClass();
             }
         }
     }, {
