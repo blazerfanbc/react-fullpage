@@ -41,7 +41,7 @@ export default class SectionsContainer extends React.Component {
         this._handleResize();
         window.addEventListener('resize', this._handleResize);
 
-        if (!this.props.scrollBar) {
+        if (!this.props.scrollBar & this.props.allowScrolling) {
             this._addCSS3Scroll();
             this._handleAnchor(); //Go to anchor in case we found it in the URL
 
@@ -180,9 +180,9 @@ export default class SectionsContainer extends React.Component {
     }
 
     _handleArrowKeys(e) {
-        // if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        //     e.preventDefault(); // Prevent unwanted scrolling on Firefox
-        // }
+        if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+            e.preventDefault(); // Prevent unwanted scrolling on Firefox
+        }
         const event = window.event ? window.event : e;
         const activeSection = event.keyCode === 38 || event.keyCode === 37 ? this.state.activeSection - 1 : (event.keyCode === 40 || event.keyCode === 39 ? this.state.activeSection + 1 : -1);
 
@@ -357,6 +357,7 @@ SectionsContainer.defaultProps = {
     arrowNavigation: true,
     activeSection: 0,
     touchNavigation: true,
+    allowScrolling: true,
 };
 
 SectionsContainer.propTypes = {
@@ -375,6 +376,7 @@ SectionsContainer.propTypes = {
     arrowNavigation: React.PropTypes.bool,
     activeSection: React.PropTypes.number,
     touchNavigation: React.PropTypes.bool,
+    allowScrolling: React.PropTypes.bool,
 };
 
 SectionsContainer.childContextTypes = {
