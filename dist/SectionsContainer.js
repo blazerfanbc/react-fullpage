@@ -108,7 +108,7 @@ var SectionsContainer = function (_React$Component) {
     }, {
         key: '_addCSS3Scroll',
         value: function _addCSS3Scroll() {
-            this._addOverflowToBody();
+            // this._addOverflowToBody();
             this._addMouseWheelEventHandlers();
         }
     }, {
