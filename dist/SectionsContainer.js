@@ -66,7 +66,7 @@ var SectionsContainer = function (_React$Component) {
             this._handleResize();
             window.addEventListener('resize', this._handleResize);
 
-            if (!this.props.scrollBar && this.props.allowScrolling) {
+            if (!this.props.scrollBar & this.props.allowScrolling) {
                 this._addCSS3Scroll();
                 this._handleAnchor(); //Go to anchor in case we found it in the URL
 
