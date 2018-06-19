@@ -42,7 +42,7 @@ export default class SectionsContainer extends React.Component {
         window.addEventListener('resize', this._handleResize);
 
         if (!this.props.scrollBar & this.props.allowScrolling) {
-            this._addCSS3Scroll();
+            // this._addCSS3Scroll();
             this._handleAnchor(); //Go to anchor in case we found it in the URL
 
             window.addEventListener('hashchange', this._handleAnchor, false); //Add an event to watch the url hash changes
