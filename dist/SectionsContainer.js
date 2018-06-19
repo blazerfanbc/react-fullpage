@@ -67,7 +67,7 @@ var SectionsContainer = function (_React$Component) {
             window.addEventListener('resize', this._handleResize);
 
             if (this.props.allowScrolling & !this.props.scrollBar) {
-                this._addCSS3Scroll();
+                // this._addCSS3Scroll();
                 this._handleAnchor(); //Go to anchor in case we found it in the URL
 
                 window.addEventListener('hashchange', this._handleAnchor, false); //Add an event to watch the url hash changes
@@ -108,7 +108,7 @@ var SectionsContainer = function (_React$Component) {
     }, {
         key: '_addCSS3Scroll',
         value: function _addCSS3Scroll() {
-            // this._addOverflowToBody();
+            this._addOverflowToBody();
             this._addMouseWheelEventHandlers();
         }
     }, {
