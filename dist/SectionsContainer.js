@@ -91,11 +91,11 @@ var SectionsContainer = function (_React$Component) {
                 this._addActiveClass();
             }
 
-            if (this.props.allowScrolling & !this.props.scrollBar) {
+            if (nextProps.allowScrolling) {
                 this._addOverflowToBody();
                 this._addMouseWheelEventHandlers();
             }
-            else {
+            else if (nextProps.allowScrolling == false) {
                 this._removeOverflowFromBody();
                 this._removeMouseWheelEventHandlers();
             }
